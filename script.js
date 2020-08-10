@@ -27,17 +27,17 @@ window.addEventListener('DOMContentLoaded', () => {
             div.style.backgroundColor = color;
         });
 
-        div.addEventListener('dblclick', e => {
+        div.addEventListener('dblclick', () => {
             if (div.getAttribute('id') % 2 === 0) {
-                if (e.target.nextElementSibling) {
-                    document.body.removeChild(e.target.nextElementSibling);
+                if (div.nextElementSibling) {
+                    document.body.removeChild(div.nextElementSibling);
                     numDivs--;
                 } else {
                     alert('No next element sibling to remove!');
                 }
             } else {
-                if (e.target.previousElementSibling && e.target.previousElementSibling.classList.contains('div')) {
-                    document.body.removeChild(e.target.previousElementSibling);
+                if (div.previousElementSibling && div.previousElementSibling.classList.contains('div')) {
+                    document.body.removeChild(div.previousElementSibling);
                     numDivs--;
                 } else {
                     alert('No previous element sibling to remove!');
